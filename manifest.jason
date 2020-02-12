@@ -1,0 +1,15 @@
+{
+    "name": "Carrucel",
+    "short_name":"Carrucel",
+    "description": "grupo de 5 imagenes que se intercalan en intervalos de 3 segundos",
+    "background_color": "#2B2B2B",
+    "theme_color":"#F0DB4F",
+    "orientation":"portrait",
+    "display":"standalone",
+    "start_url":"./?utm_source=web_app_manifest",
+    "scope":"/.",
+    "lang":"es-MX",
+    "icons":[
+        
+    ]
+}
