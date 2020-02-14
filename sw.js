@@ -4,7 +4,7 @@ urlsToCache = [
     './CSS',
     './Imagenes',
     './main.js',
-    './sw',
+    './sw', 
     './index.html',
     './script.js',
 ];
