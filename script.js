@@ -2,7 +2,7 @@ if('serviceWorker' in navigator){
 
     
         navigator.serviceWorker.register('/sw.js')
-        .then((registration) => console.log(registration.scope))
+        .then((registration) => console.log("Registrado: " + registration.scope))
         .catch((error) => console.error(error));
 }
 
