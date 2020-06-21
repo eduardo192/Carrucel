@@ -1,3 +1,10 @@
 if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./sw.js').then(reg => console.log('Registro de SW Exitoso', reg)).catch(err => console.warn('Erro al tratar de registrar al SW', err));
+
+    window.addEventListener('load', function(){
+        navigator.serviceWorker.register('./sw.js',{scope: './'})
+        .then((registration) => console.log(registration.scope))
+        .catch((error) => console.error(error));
+    });
 }
+
+// CHECAR LINK https://medium.com/samsung-internet-dev/pwa-series-service-workers-los-b%C3%A1sicos-de-la-experiencia-offline-14592542c738

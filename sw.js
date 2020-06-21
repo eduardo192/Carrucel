@@ -1,12 +1,15 @@
+
+// Consultar para sevise worker https://developers.google.com/web/fundamentals/primers/service-workers?hl=es
+
 const CACHE_NAME = 'Cache_Carrucel',
 urlsToCache = [
-    './',
-    './CSS',
-    './Imagenes',
-    './main.js',
-    './sw', 
-    './index.html',
-    './script.js',
+    './Imagenes/imagen1.jpg',
+    './Imagenes/imagen2.jpg',
+    './Imagenes/imagen3.jpg',
+    './Imagenes/imagen4.jpg',
+    './Imagenes/imagen5.jpg',
+    './JS/main.js', 
+    './index.html'
 ];
 
 self.addEventListener('install', e => {

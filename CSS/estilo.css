@@ -15,9 +15,11 @@ img{
 }
 
 .contenedor{
-    width: 100%;     
+    width: 40%;     
     position: relative;
-    height: 780px;
+    height: 500px;
+    left: 50%;
+    top: 60px;
 }
 
 .botones{
@@ -52,4 +54,20 @@ img{
 .adelante{
     right: 2%;
     top: calc(50% - 70px);
+}
+
+.Formulario{
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 1300px;
+    background-color: powderblue;
+}
+
+h3{
+    align-content: center;
+}
+
+.componente{
+    margin: 2px;
+
 }
