@@ -16,17 +16,17 @@
             "type": "image/jpg"
         },
         {
-            "src": "./carucel144.png",
+            "src": "carucel144.png",
             "sizes": "144x144",
             "type": "image/jpg"
         },
         {
-            "src": "./carucel192.png",
+            "src": "carucel192.png",
             "sizes": "192x192",
             "type": "image/jpg"
         },
         {
-            "src": "./carucel512.png",
+            "src": "carucel512.png",
             "sizes": "512x512",
             "type": "image/jpg"
         }
