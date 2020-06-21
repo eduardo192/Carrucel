@@ -3,7 +3,7 @@
     "short_name":"Carrucel",
     "description": "grupo de 5 imagenes que se intercalan en intervalos de 3 segundos",
     "background_color": "#2B2B2B",
-    "theme_color":"#F0DB4F",
+    "theme_color":"#317EFB",
     "orientation":"portrait",
     "display":"standalone",
     "start_url":"./index.html?launcher=true",
