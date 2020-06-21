@@ -33,20 +33,16 @@ function hacer(){
     
     //condicion para evitar que se repita la primera fila con cada evento del boton
     if(document.getElementById('1') == null){
-        //se crea elemento tr
-        fila = document.createElement('tr');
-        //se le agrega un un atributo id con valor 1
-        fila.setAttribute('id', '1');
-        //se agrega elemento tr como hijo del elemnto table
-        Tabla.appendChild(fila);
-        //ciclo para sacar datos del arreglo de objetos y crear los identificadores de las columnas
+        
         for(dato in datos[contador]){
-            //crear elemnto td
+            
+            console.log(datos[contador]);
+            /*//crear elemnto td
             celda = document.createElement('td');
             // agregar un valor al elemento antes creado
             celda.innerHTML = dato;
             // colocar elemento como hijo del elemento tr
-            fila.appendChild(celda);
+            fila.appendChild(celda);*/
         }
     }
     
@@ -58,9 +54,11 @@ function hacer(){
 
     //ciclo para recorrer los datos en el arreglo
     for(dato in datos[contador]){
+        
         //se crea una nueva celad
         celda = document.createElement('td');
         //se le agrega un valor a la celda
+        console.log(datos[contador][dato]);
         celda.innerHTML = datos[contador][dato];
         //se agrega la celda a la fila
         fila.appendChild(celda);
@@ -126,7 +124,7 @@ function Eliminar(event){
 }
 
 function Cargar(){
-    alert('Evento cargar');
+    //alert('Evento cargar');
     
     
     if(typeof(Storage) !== 'undefined'){

@@ -16,34 +16,21 @@ timer = setInterval( () => {
 } , 3000);
 
 function Atras(){
-    //alert('Boton atras pulsado');
     direccion = 'A';
     Imagen(-1);
 }
 
 function Adelante(){
-    //alert('Boton adelante pulsado');
     direccion = 'D';
     Imagen(1);
 }
 
-/*adelante.addEventListener('click', () =>{
-    
-});
-
-
-atras.addEventListener('click', ()=>{
-    
-});*/
 
 function Imagen (incremento) {
     cont += incremento;      
     if(cont < 0) cont = 4;
     if(cont > 4) cont = 0;
-    //console.log('imagen' + (cont+1));
     img.setAttribute('src',imagenes[cont]);
-    console.log(imagenes[cont]);
-    //img.src = imagenes[cont ];
     clearInterval(timer);
     timer = setInterval( () => {
     if(direccion == 'D'){
@@ -59,7 +46,7 @@ function Imagen (incremento) {
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //Instancia de los elementos en el dom 
-let nombre = document.getElementById('Nombre'),
+/*let nombre = document.getElementById('Nombre'),
 apellido = document.getElementById('Apellidos'),
 adress = document.getElementById('Direccion'),
 telefono = document.getElementById('Telefono'),
@@ -123,10 +110,10 @@ function Eliminar(event){
     /*console.log(btn );
     console.log(padre);
     console.log(hijo);
-    console.log(clave);*/
+    console.log(clave);
     
-}
-
+}*/
+/*
 function CrearTabla(data){
     datos = data;
     //condicion para evitar que se repita la primera fila con cada evento del boton
@@ -189,7 +176,7 @@ function SendLocalstorage(arr){
 
     return datos;
 }*/
-
+/*
 function ObtenerStorage(){
     let d ;
     if(typeof(Storage) !== 'undefined'){
