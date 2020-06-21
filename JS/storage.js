@@ -36,7 +36,7 @@ function hacer(){
         
         for(dato in datos[contador]){
             
-            console.log(datos[contador]);
+            console.log( "primer for" + datos[contador]);
             /*//crear elemnto td
             celda = document.createElement('td');
             // agregar un valor al elemento antes creado
@@ -58,7 +58,7 @@ function hacer(){
         //se crea una nueva celad
         celda = document.createElement('td');
         //se le agrega un valor a la celda
-        console.log(datos[contador][dato]);
+        console.log("Segundo for" + datos[contador][dato]);
         celda.innerHTML = datos[contador][dato];
         //se agrega la celda a la fila
         fila.appendChild(celda);
@@ -69,7 +69,7 @@ function hacer(){
     //se le agreag un valor al elemento
     boton.innerText = 'Eliminar';
     // se agrega un atrivito class con valor eliminar
-    boton.setAttribute('class','eliminar');
+    boton.setAttribute('class',"btn btn-danger");
     //se agreag un evento al boton y una funcion
     boton.setAttribute('onClick','Eliminar(event)')
     // se agrega elemento a la fila
@@ -79,7 +79,7 @@ function hacer(){
     //se define si el navegador soporta localstorage 
     if(typeof(Storage) !== 'undefined'){
         // se manda el arreglo de objetos al storage con id Datos
-        localStorage.setItem('Datos',JSON.stringify(datos));
+        localStorage.setItem("Datos",JSON.stringify(datos));
     }else{
         alert('Localstorage no disponible para este navegador');
     }
@@ -102,8 +102,9 @@ function Eliminar(event){
     console.log(hijo[0].parentNode.rowIndex);
     //se optiene el indice del elemento para sacar del arreglo el elemento con el mismo indice
     //en el espacion que fue seleccionado para eliminarse se iguala al elemento siguiente y el ultimo elemento se borra 
-    datos[hijo[0].parentNode.rowIndex -1 ] = datos[hijo[0].parentNode.rowIndex];
-    datos[hijo[0].parentNode.rowIndex] = null;
+    /*datos[hijo[0].parentNode.rowIndex -1 ] = datos[hijo[0].parentNode.rowIndex];
+    datos[hijo[0].parentNode.rowIndex -1 ] = null;*/
+    datos.splice(hijo[0].parentNode.rowIndex -1 ,1);
     //se elimina de la tabla el hijo seleccionado, en este caso el padre el elemento boton
     Tabla.removeChild(padre);
 
@@ -132,7 +133,7 @@ function Cargar(){
         if(localStorage.getItem('Datos') != null){
             datos = JSON.parse(localStorage.getItem('Datos'));
             //condicion para evitar que se repita la primera fila con cada evento del boton
-            if(document.getElementById('1') == null){
+           /* if(document.getElementById('1') == null){
                 //se crea elemento tr
                 fila = document.createElement('tr');
                 //se le agrega un un atributo id con valor 1
@@ -141,6 +142,7 @@ function Cargar(){
                 Tabla.appendChild(fila);
                 //ciclo para sacar datos del arreglo de objetos y crear los identificadores de las columnas
                 for(dato in datos[contador]){
+                    console.log("ultimo for: " + dato)
                     //crear elemnto td
                     celda = document.createElement('td');
                     // agregar un valor al elemento antes creado
@@ -148,7 +150,7 @@ function Cargar(){
                     // colocar elemento como hijo del elemento tr
                     fila.appendChild(celda);
                 }
-            }
+            }*/
             for(let i=0; i < datos.length;i++){
                 //se cera un nuevo elemento tr
                 fila = document.createElement('tr');
@@ -157,6 +159,7 @@ function Cargar(){
 
                 //ciclo para recorrer los datos en el arreglo
                 for(dato in datos[i]){
+                    
                     //se crea una nueva celad
                     celda = document.createElement('td');
                     //se le agrega un valor a la celda
@@ -164,18 +167,24 @@ function Cargar(){
                     //se agrega la celda a la fila
                     fila.appendChild(celda);
                 }
+
+                if(datos[i][dato] == null || datos[i][dato] == undefined ){
+                    return;
+                }
+                contador = i +1 ;
+                //creacion de un elemento boton para la eliminaion de los registros
+                let boton = document.createElement('button');
+                //se le agreag un valor al elemento
+                boton.innerText = 'Eliminar';
+                // se agrega un atrivito class con valor eliminar
+                boton.setAttribute('class','btn btn-danger');
+                //se agreag un evento al boton y una funcion
+                boton.setAttribute('onClick','Eliminar(event)')
+                // se agrega elemento a la fila
+                fila.appendChild(boton);
             } 
 
-            //creacion de un elemento boton para la eliminaion de los registros
-            let boton = document.createElement('button');
-            //se le agreag un valor al elemento
-            boton.innerText = 'Eliminar';
-            // se agrega un atrivito class con valor eliminar
-            boton.setAttribute('class','eliminar');
-            //se agreag un evento al boton y una funcion
-            boton.setAttribute('onClick','Eliminar(event)')
-            // se agrega elemento a la fila
-            fila.appendChild(boton);
+            
     
         }
     }else{
