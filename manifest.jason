@@ -6,11 +6,30 @@
     "theme_color":"#F0DB4F",
     "orientation":"portrait",
     "display":"standalone",
-    "start_url":"./?utm_source=web_app_manifest",
+    "start_url":"./index.html?launcher=true",
     "scope":"./",
     "lang":"es-MX",
     "icons":[
-        
+        {
+            "src": "./carucel96_96.jpg",
+            "sizes": "96x96",
+            "type": "image/jpg"
+        },
+        {
+            "src": "./carucel144.jpg",
+            "sizes": "144x144",
+            "type": "image/jpg"
+        },
+        {
+            "src": "./carucel192.jpg",
+            "sizes": "192x192",
+            "type": "image/jpg"
+        },
+        {
+            "src": "./carucel512.jpg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        }
     ]
 }
 
