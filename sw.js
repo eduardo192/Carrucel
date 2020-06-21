@@ -43,6 +43,7 @@ self.addEventListener('activate', e => {
 
 
 self.addEventListener('fetch', e => {
+    if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') return;
     e.respondWith(
         caches.match(e.request).then( res=>{
             if(res){
