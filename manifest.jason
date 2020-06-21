@@ -11,22 +11,22 @@
     "lang":"es-MX",
     "icons":[
         {
-            "src": "./carucel96_96.jpg",
+            "src": "./carucel96.png",
             "sizes": "96x96",
             "type": "image/jpg"
         },
         {
-            "src": "./carucel144.jpg",
+            "src": "./carucel144.png",
             "sizes": "144x144",
             "type": "image/jpg"
         },
         {
-            "src": "./carucel192.jpg",
+            "src": "./carucel192.png",
             "sizes": "192x192",
             "type": "image/jpg"
         },
         {
-            "src": "./carucel512.jpg",
+            "src": "./carucel512.png",
             "sizes": "512x512",
             "type": "image/jpg"
         }
