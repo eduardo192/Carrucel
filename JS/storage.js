@@ -68,6 +68,14 @@ function hacer(){
         alert('Localstorage no disponible para este navegador');
     }
 
+    document.getElementById('NumeroCuenta').value = "";
+    document.getElementById('Nombre').value = "";
+    document.getElementById('Apellidos').value = "";
+    document.getElementById('FechaNacimiento').value = "";
+    document.getElementById('Telefono').value = "";
+    document.getElementById('correo').value = "";
+    document.getElementById('NumeroCuenta').focus();
+
     contador++;
 }
 
@@ -101,6 +109,7 @@ function Eliminar(event){
 }
 
 function Cargar(){
+    document.getElementById('NumeroCuenta').focus();
     if(typeof(Storage) !== 'undefined'){
         // se manda el arreglo de objetos al storage con id Datos
         if(localStorage.getItem('Datos') != null){

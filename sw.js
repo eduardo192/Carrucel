@@ -8,7 +8,11 @@ urlsToCache = [
     './Imagenes/imagen3.jpg',
     './Imagenes/imagen4.jpg',
     './Imagenes/imagen5.jpg',
-    './JS/main.js', 
+    './JS/carrucel.js', 
+    './JS/storage',
+    './manifest.json',
+    './script.js',
+    './sw.js',
     './index.html'
 ];
 
