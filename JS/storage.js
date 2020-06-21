@@ -16,8 +16,6 @@ objetoDatos = {};
 //finacion que se ejecuta en el evento click del boton 
 function hacer(){
     //obtener datos guardados en storage
-    //datos = ObtenerStorage();
-    //se verifica si habia datos en storage
     //objetos con los datos capturados de los textbox 
     objetoDatos = {
         Numero_Cuenta : numeroCuenta.value,
@@ -32,21 +30,7 @@ function hacer(){
 
     
     //condicion para evitar que se repita la primera fila con cada evento del boton
-    if(document.getElementById('1') == null){
         
-        for(dato in datos[contador]){
-            
-            console.log( "primer for" + datos[contador]);
-            /*//crear elemnto td
-            celda = document.createElement('td');
-            // agregar un valor al elemento antes creado
-            celda.innerHTML = dato;
-            // colocar elemento como hijo del elemento tr
-            fila.appendChild(celda);*/
-        }
-    }
-    
-    
     //se cera un nuevo elemento tr
     fila = document.createElement('tr');
     fila.setAttribute('id','fila' + contador);
@@ -102,8 +86,6 @@ function Eliminar(event){
     console.log(hijo[0].parentNode.rowIndex);
     //se optiene el indice del elemento para sacar del arreglo el elemento con el mismo indice
     //en el espacion que fue seleccionado para eliminarse se iguala al elemento siguiente y el ultimo elemento se borra 
-    /*datos[hijo[0].parentNode.rowIndex -1 ] = datos[hijo[0].parentNode.rowIndex];
-    datos[hijo[0].parentNode.rowIndex -1 ] = null;*/
     datos.splice(hijo[0].parentNode.rowIndex -1 ,1);
     //se elimina de la tabla el hijo seleccionado, en este caso el padre el elemento boton
     Tabla.removeChild(padre);
@@ -116,41 +98,15 @@ function Eliminar(event){
     }
 
     localStorage.setItem('Datos',JSON.stringify(datos));
-
-    /*console.log(btn );
-    console.log(padre);
-    console.log(hijo);
-    console.log(clave);*/
-    
 }
 
 function Cargar(){
-    //alert('Evento cargar');
-    
-    
     if(typeof(Storage) !== 'undefined'){
         // se manda el arreglo de objetos al storage con id Datos
         if(localStorage.getItem('Datos') != null){
             datos = JSON.parse(localStorage.getItem('Datos'));
             //condicion para evitar que se repita la primera fila con cada evento del boton
-           /* if(document.getElementById('1') == null){
-                //se crea elemento tr
-                fila = document.createElement('tr');
-                //se le agrega un un atributo id con valor 1
-                fila.setAttribute('id', '1');
-                //se agrega elemento tr como hijo del elemnto table
-                Tabla.appendChild(fila);
-                //ciclo para sacar datos del arreglo de objetos y crear los identificadores de las columnas
-                for(dato in datos[contador]){
-                    console.log("ultimo for: " + dato)
-                    //crear elemnto td
-                    celda = document.createElement('td');
-                    // agregar un valor al elemento antes creado
-                    celda.innerHTML = dato;
-                    // colocar elemento como hijo del elemento tr
-                    fila.appendChild(celda);
-                }
-            }*/
+          
             for(let i=0; i < datos.length;i++){
                 //se cera un nuevo elemento tr
                 fila = document.createElement('tr');
